@@ -72,8 +72,8 @@ db.run(
 
       const start = async () => {
         try {
-          await fastify.listen({ port: 3020 });
-          console.log('Server listening on http://localhost:3000');
+          await fastify.listen({ port: 3020,host:"0.0.0.0" });
+          console.log('Server listening on http://localhost:3020');
         } catch (err) {
           console.error('Error starting server:', err);
           process.exit(1);
