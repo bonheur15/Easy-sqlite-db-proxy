@@ -45,7 +45,7 @@ db.run(
 
       fastify.get('/stats', async (_request: FastifyRequest, reply: FastifyReply) => {
         try {
-          const hits = await new Promise<any[]>((resolve, reject) => {
+          const hits = await new Promise((resolve, reject) => {
             db.all('SELECT * FROM hits', [], (err, rows) => {
               if (err) {
                 console.error('Error fetching hit counts:', err.message);
@@ -72,7 +72,7 @@ db.run(
 
       const start = async () => {
         try {
-          await fastify.listen({ port: 3000 });
+          await fastify.listen({ port: 3020 });
           console.log('Server listening on http://localhost:3000');
         } catch (err) {
           console.error('Error starting server:', err);
